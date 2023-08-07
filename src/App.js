@@ -5,17 +5,17 @@ import "./index.css";
 export default function App() {
   const emojiPairs = [
     { name: "lion", color: "" },
-    { name: "unicorn", color: "" },
+    { name: "fox", color: "" },
     { name: "wolf", color: "" },
     { name: "frog", color: "" },
     { name: "bear", color: "" },
-    { name: "pig", color: "" },
+    { name: "unicorn", color: "" },
     { name: "butterfly", color: "" },
     { name: "snail", color: "" },
     { name: "whale", color: "" },
-    { name: "fox", color: "" },
     { name: "squid", color: "" },
-    { name: "dinosaur", color: "" },
+    { name: "bee", color: "" },
+    { name: "pig", color: "" },
   ];
 
   return (
