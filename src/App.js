@@ -11,12 +11,13 @@ export default function App() {
     { name: "bear", color: "" },
     { name: "pig", color: "" },
     { name: "butterfly", color: "" },
-    { name: "unicorn", color: "" },
+    { name: "snail", color: "" },
     { name: "whale", color: "" },
     { name: "fox", color: "" },
     { name: "squid", color: "" },
     { name: "dinosaur", color: "" },
   ];
+
   return (
     <div className="App">
       {emojiPairs.map((emojiPair) => {
