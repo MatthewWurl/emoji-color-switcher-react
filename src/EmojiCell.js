@@ -1,7 +1,20 @@
-const emojify = (emojiName) => {
-  return <img src={`emojis/${emojiName}.png`} alt="emoji" />;
-};
+export default function EmojiCell({
+  emojiPair,
+  activeEmojiName,
+  setActiveEmojiName,
+}) {
+  const name = emojiPair.name;
+  const color = emojiPair.color;
 
-export default function EmojiCell({ emojiPair }) {
-  return <div className="EmojiCell">{emojify(emojiPair.name)}</div>;
+  const emojify = (name) => {
+    return <img src={`emojis/${name}.png`} alt="emoji" />;
+  };
+
+  return (
+    <>
+      <div className="EmojiCell" onClick={() => setActiveEmojiName(name)}>
+        {emojify(name)}
+      </div>
+    </>
+  );
 }
