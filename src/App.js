@@ -1,41 +1,24 @@
-import React, { useEffect, useState } from "react";
-import EmojiCell from "./EmojiCell";
+import React, { useState } from "react";
+import EmojiCell from "./Components/EmojiCell";
+import { emojis, getGradient } from "./Utils/utils";
 import "./index.css";
 
 export default function App() {
-  const [activeEmojiName, setActiveEmojiName] = useState();
-
-  useEffect(() => {
-    console.log(`Active set to ${activeEmojiName}`);
-  }, [activeEmojiName]);
-
-  const emojiPairs = [
-    { id: 1, name: "lion", color: "" },
-    { id: 2, name: "fox", color: "" },
-    { id: 3, name: "wolf", color: "" },
-    { id: 4, name: "frog", color: "" },
-    { id: 5, name: "bear", color: "" },
-    { id: 6, name: "unicorn", color: "" },
-    { id: 7, name: "butterfly", color: "" },
-    { id: 8, name: "snail", color: "" },
-    { id: 9, name: "whale", color: "" },
-    { id: 10, name: "squid", color: "" },
-    { id: 11, name: "bee", color: "" },
-    { id: 12, name: "pig", color: "" },
-  ];
+  const [activeEmoji, setActiveEmoji] = useState({});
 
   return (
-    <div className="App">
-      {emojiPairs.map((emojiPair) => {
+    <div className="App" style={getGradient(activeEmoji.color)}>
+      {emojis.map((emoji) => {
         return (
           <EmojiCell
-            key={emojiPair.id}
-            emojiPair={emojiPair}
-            activeEmojiName={activeEmojiName}
-            setActiveEmojiName={setActiveEmojiName}
+            key={emoji.id}
+            emoji={emoji}
+            activeEmoji={activeEmoji}
+            setActiveEmoji={setActiveEmoji}
           />
         );
       })}
+      <footer>A Scrimba Vue.js project recreated using React.</footer>
     </div>
   );
 }

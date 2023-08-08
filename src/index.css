@@ -1,3 +1,7 @@
+:root {
+  font: 1rem/1.175 "BlinkMacSystemFont", -apple-system, "Roboto", sans-serif;
+}
+
 html,
 body {
   padding: 0;
@@ -10,13 +14,78 @@ body {
     ". . . ."
     ". . . ."
     ". . . .";
-  height: 100vh;
+  padding: 96px;
+  grid-gap: 32px;
   width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
-.EmojiCell {
+img {
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: calc(-0.12109375em);
+}
+
+.emoji-cell {
+  display: grid;
+  grid-template-rows: 65% 35%;
+  background: whitesmoke;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 60px;
+  transition: transform 500ms;
+}
+
+.emoji-cell:hover {
+  transition: transform 500ms;
+  transform: scale(1.1);
+}
+
+.emoji-cell--top,
+.emoji-cell--bottom {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
+}
+
+.emoji-cell--top {
+  border-radius: 4px 4px 0 0;
+}
+
+.emoji-cell--bottom {
+  font-weight: 900;
+  font-size: 1.75rem;
+}
+
+.bounce {
+  animation: bounce 1s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    transform: rotate(12deg) scale(1.2);
+  }
+  67% {
+    transform: rotate(-12deg) scale(0.8);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+footer {
+  position: fixed;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(55, 65, 80);
+  opacity: 75%;
+  color: rgb(210, 210, 230);
+  text-align: center;
+  font-size: 1.2rem;
 }
