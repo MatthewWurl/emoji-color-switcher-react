@@ -1,13 +1,12 @@
-import { getGradient } from "../Utils/utils";
+import { getGradient } from "../lib/gradient";
 
 export default function EmojiCell({ emoji, activeEmoji, setActiveEmoji }) {
   const { color, name } = emoji;
+  const animationClass = name === activeEmoji.name ? "bounce" : "";
 
   const emojify = (name) => {
     return <img src={`emojis/${name}.png`} alt="emoji" />;
   };
-
-  const animationClass = name === activeEmoji.name ? "bounce" : "";
 
   return (
     <>
