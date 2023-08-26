@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import EmojiCell from "./Components/EmojiCell";
 import Emoji from "./emoji";
 import { getGradient } from "./lib/gradient";
 import "./index.css";
 
-export default function App() {
-  const [activeEmoji, setActiveEmoji] = useState({});
+const App = () => {
+  const [activeEmoji, setActiveEmoji] = useState({} as Emoji);
 
   const emojis = [
     new Emoji(1, "lion", "#FDB825"),
@@ -34,7 +34,11 @@ export default function App() {
           />
         );
       })}
-      <footer>A Scrimba Vue.js project recreated using React.</footer>
+      <footer>
+        A Scrimba Vue.js project recreated using React and TypeScript.
+      </footer>
     </div>
   );
-}
+};
+
+export default App;
